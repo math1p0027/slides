@@ -1,6 +1,6 @@
 # Presentation slides with Reveal.js
 
-Georgios Arampatzis, 2025
+Sofia Zervaki, 2025
 
 ---
 
@@ -15,7 +15,9 @@ Georgios Arampatzis, 2025
 
 # Inline Math
 
-Einstein's formula: $E = mc^2$
+This is Einstein's formula: $E = mc^2$
+
+
 
 ---
 
