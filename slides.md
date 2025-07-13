@@ -1,4 +1,7 @@
-# Presentation slides with Reveal.js
+# Towards causal Representation Learning
+
+ Bernhard Schölkopf , Francesco Locatello , Stefan Bauer , Nan Rosemary Ke , Nal Kalchbrenner
+ Anirudh Goyal, Yoshua Bengio
 
 Sofia Zervaki, 2025
 
