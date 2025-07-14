@@ -6,7 +6,26 @@
 Sofia Zervaki, 2025
 
 ---
+#  Why Machine Learning Needs Causality
 
+Natural Intelligence vs. Machine Learning
+
+- Animals can
+  - Transfer knowledge across tasks
+  - Generalize across different settings (even with new distributions)
+
+- ML struggles with this kind of strong / out-of-distribution (OOD) generalization
+
+Why?
+
+- ML often ignores important factors like
+  - Interventions (actions that change the world)
+  - Domain shifts (new environments)
+  - Temporal structure (how things evolve)
+
+
+
+--
 # Why Reveal.js?
 
 - Cross-platform
