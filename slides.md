@@ -8,30 +8,29 @@ Sofia Zervaki, 2025
 ---
 #  Why Machine Learning Needs Causality
 
-- ML struggles with strong generalization (e.g., across tasks or domains), unlike animals.
+- ML struggles with strong generalization.
 
-- This is partly because ML systems often ignore:
+- ML systems often ignore:
   - Interventions
   - Domain shifts
   - Temporal structure
 
 - Most ML success comes from recognizing patterns in i.i.d. data.
 
-To show why this matters for causal models, the paper highlights three key challenges in current machine learning.
+The paper outlines three key ML challenges where causality matters.
 
 --
 # Issue 1: Robustness
 
 - Deep learning models often fail under small changes in input data.
-- Benchmarks test models under these shifts. 
-- Solutions include:
+- Benchmarks evaluate models under such shifts, with solutions like
   - Data augmentation
   - Pre-training
   - Self-supervision
   - Architectures with inductive biases
 
 - The authors argue that those fixes may not be sufficient 
-- To generalize beyond the i.i.d setting we need **Causal Models**
+- To generalize beyond the i.i.d setting we need **Causal Models** which go beyond just spotting patterns
 
 
 --
