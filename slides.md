@@ -8,30 +8,35 @@ Sofia Zervaki, 2025
 ---
 #  Why Machine Learning Needs Causality
 
-Natural Intelligence vs. Machine Learning
+- ML struggles with strong generalization (e.g., across tasks or domains), unlike animals.
 
-- Animals can
-  - Transfer knowledge across tasks
-  - Generalize across different settings (even with new distributions)
+- This is partly because ML systems often ignore:
+  - Interventions
+  - Domain shifts
+  - Temporal structure
 
-- ML struggles with this kind of strong / out-of-distribution (OOD) generalization
+- Most ML success comes from recognizing patterns in i.i.d. data.
 
-Why?
+To show why this matters for causal models, the paper highlights three key challenges in current machine learning.
 
-- ML often ignores important factors like
-  - Interventions (actions that change the world)
-  - Domain shifts (new environments)
-  - Temporal structure (how things evolve)
+--
+# Issue 1: Robustness
 
+- Deep learning models often fail under small changes in input data.
+- Benchmarks test models under these shifts. 
+- Solutions include:
+  - Data augmentation
+  - Pre-training
+  - Self-supervision
+  - Architectures with inductive biases
+
+- The authors argue that those fixes may not be sufficient 
+- To generalize beyond the i.i.d setting we need **Causal Models**
 
 
 --
-# Why Reveal.js?
 
-- Cross-platform
-- Markdown-based
-- Supports math with LaTeX
-- Looks great
+# Issue 2: Learning Reusable Mechanisms
 
 ---
 
