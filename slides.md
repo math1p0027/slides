@@ -165,6 +165,101 @@ By Picard–Lindelöf, this has a unique solution if $f$ is Lipschitz
 
 
 ---
+
+#  V. CAUSAL DISCOVERY AND MACHINE LEARNING
+
+
+---
+
+
+
+# VI. LEARNING CAUSAL VARIABLES
+
+
+--
+
+
+
+
+<img src="figures/Fig2.png" alt="Histogram" width="400">
+
+
+--
+
+
+
+<img src="figures/Fig3.png" alt="Histogram" width="400">
+
+
+
+---
+
+# VII. IMPLICATIONS FOR MACHINE LEARNING
+
+--
+
+#  A. Semi-Supervised Learning (SSL)
+
+--
+
+# B. Adversarial Vulnerability
+
+
+--
+
+# C. Robustness and Strong Generalization
+
+
+--
+
+# D. Pre-training, Data Augmentation, and Self-Supervision
+
+--
+
+ # E. Reinforcement Learning
+
+--
+
+# F. Scientific Applications
+
+--
+
+#  G. Multi-Task Learning and Continual Learning
+
+
+
+
+---
+
+# VIII. CONCLUSION
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
 # Inline Math
 
 This is Einstein's formula: $E = mc^2$
