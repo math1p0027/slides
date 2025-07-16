@@ -6,7 +6,7 @@
 Sofia Zervaki, 2025
 
 ---
-#  Why Machine Learning Needs Causality
+# I. Introduction
 
 - ML struggles with strong generalization.
 
@@ -56,11 +56,40 @@ As a result
 
 # A Causality Perspective: 
 
+- Conditional probabilities don’t explain what happens when we intervene
+
+- Intervention
+  - Causality requires reasoning about actions and changes
+  - Goes beyond what’s observed and includes
+    - Hypothetical scenarios
+    - Counterfactuals
+    - Deliberate reasoning
+    
+---
+
+#  II. LEVELS OF CAUSAL MODELING
+
+**Physical Models**
+
+Gold standard: A set of differential equations describe how physical systems evolve over time.
+
+These equations:
+  - Predict future behavior
+
+  - Describe interventions and causal structure
+
+  - Provide physical insight
+
+
+Example:
+
+$ \frac{dx}{dt} = f(x)$, with $x \in R^d$ and initial value $x(t_0)=x_0$
+
+By Picard–Lindelöf, this has a unique solution if $f$ is Lipschitz
 
 
 
 ---
-
 # Inline Math
 
 This is Einstein's formula: $E = mc^2$
