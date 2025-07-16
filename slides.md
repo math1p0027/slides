@@ -145,8 +145,22 @@ By Picard–Lindelöf, this has a unique solution if $f$ is Lipschitz
 
 
 
+--
+
+# D. Difference Between Statistical Models, Causal Graphical Models, and SCMs
 
 
+---
+
+#  IV. INDEPENDENT CAUSAL MECHANISMS
+
+
+
+--
+
+
+
+![Histogram](figures/Fig 1.png)
 
 
 
