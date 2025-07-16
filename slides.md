@@ -86,7 +86,7 @@ By Picard–Lindelöf, this has a unique solution if $f$ is Lipschitz
 
 
 --
-Summary of different modeling approaches
+# Summary of different modeling approaches
 
 
 | Model Type           | Predict in i.i.d. | Predict under shift/intervention | Answer counterfactuals | Obtain physical insight | Learn from data |
@@ -96,6 +96,52 @@ Summary of different modeling approaches
 | Causal Graphical     | Yes              | Yes                              | No                      | ?                        | ?                |
 | Statistical          | Yes              | No                               | No                      | No                       | Yes              |
 
+
+
+--
+
+#  A. Predicting in the i.i.d. setting
+
+
+
+
+--
+
+#  B. Predicting Under Distribution Shifts
+
+--
+
+
+#  C. Answering Counterfactual Questions
+
+--
+
+#  D. Nature of Data: Observational, Interventional, (Un)structured
+
+
+---
+
+#  III. CAUSAL MODELS AND INFERENCE
+
+--
+
+# A. Methods driven by i.i.d. data
+
+
+
+
+--
+
+# B. The Reichenbach Principle: From Statistics to Causality
+
+
+<div style="border: 2px solid #4CAF50; padding: 10px; border-radius: 5px; background-color: #f9f9f9;">
+  <strong>Definition:</strong> A <em>function</em> is a relation between a set of inputs and a set of permissible outputs.
+</div>
+
+--
+
+#  C. Structural causal models (SCMs)
 
 
 
