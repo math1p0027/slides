@@ -69,16 +69,13 @@ As a result
 
 #  II. LEVELS OF CAUSAL MODELING
 
-**Physical Models**
+## Physical Models
 
 Gold standard: A set of differential equations describe how physical systems evolve over time.
 
-These equations:
-  - Predict future behavior
-
-  - Describe interventions and causal structure
-
-  - Provide physical insight
+These equations:  - Predict future behavior
+                  - Describe interventions and causal structure
+                  - Provide physical insight
 
 
 Example:
@@ -86,6 +83,25 @@ Example:
 $ \frac{dx}{dt} = f(x)$, with $x \in R^d$ and initial value $x(t_0)=x_0$
 
 By Picard–Lindelöf, this has a unique solution if $f$ is Lipschitz
+
+
+--
+Summary of different modeling approaches
+
+
+| Model Type           | Predict in i.i.d. | Predict under shift/intervention | Answer counterfactuals | Obtain physical insight | Learn from data |
+|----------------------|------------------|----------------------------------|-------------------------|--------------------------|------------------|
+| Mechanistic/Physical | Yes              | Yes                              | Yes                     | Yes                      | ?                |
+| Structural Causal    | Yes              | Yes                              | Yes                     | ?                        | ?                |
+| Causal Graphical     | Yes              | Yes                              | No                      | ?                        | ?                |
+| Statistical          | Yes              | No                               | No                      | No                       | Yes              |
+
+
+
+
+
+
+
 
 
 
