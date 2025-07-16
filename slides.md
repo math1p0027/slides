@@ -17,7 +17,7 @@ Sofia Zervaki, 2025
 
 - Most ML success comes from recognizing patterns in i.i.d. data.
 
-The paper outlines three key ML challenges where causality matters.
+The paper outlines some key ML challenges where causality matters.
 
 --
 # Issue 1: Robustness
@@ -36,6 +36,28 @@ The paper outlines three key ML challenges where causality matters.
 --
 
 # Issue 2: Learning Reusable Mechanisms
+
+- Humans learn intuitively
+
+- This lets them reuse knowledge to learn new tasks quickly
+
+- For ML Systems, Agents should build modular representations of the world
+
+  - Each module = a causal mechanism (like gravity, friction, etc.)
+
+As a result 
+
+- In new tasks/environments only some modules need updating
+
+- Most knowledge can be reused without retraining
+
+
+--
+
+# A Causality Perspective: 
+
+
+
 
 ---
 
