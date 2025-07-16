@@ -102,6 +102,16 @@ By Picard–Lindelöf, this has a unique solution if $f$ is Lipschitz
 
 #  A. Predicting in the i.i.d. setting
 
+- Statistical models are trained to approximate probabilities 
+
+- For a given set of input examples X and target labels Y, we want approximating $P(Y|X)$ 
+
+- This works well for standard prediction tasks, but 
+
+**Accurate predictions is not equal to causal understanding**
+
+
+- they can fail when the distribution of the data changes (intervention, real-world actions etc.)
 
 
 
@@ -109,14 +119,48 @@ By Picard–Lindelöf, this has a unique solution if $f$ is Lipschitz
 
 #  B. Predicting Under Distribution Shifts
 
+- Interventions change variable values or their relationships, violating i.i.d. assumptions.
+
+- Classical ML models often fail when deployed in real-world settings where distributions shift
+
+- Causal models help build systems that remain accurate under such changes.
+
+- Robust prediction requires more than test set accuracy. We need to trust that
+    - **the predictions of the algorithm will remain valid if the conditions change**
+
+
+
 --
-
-
 #  C. Answering Counterfactual Questions
+
+- Counterfactuals imagine what could have happened if actions were different.
+
+- Harder than interventional questions but important for intelligent reasoning.
+
+- Example:
+  - "Would a patient have avoided heart failure if they exercised earlier?"
+
+- Important for AI to reflect on past decisions and learn from alternatives.
+
+- Critical in reinforcement learning for hypothesis testing and improving policies.
+
 
 --
 
 #  D. Nature of Data: Observational, Interventional, (Un)structured
+
+- Data types matter for causal inference:
+  - **Observational** (i.i.d. or with unknown shifts) vs. **Interventional** (known changes)
+  - **Hand-engineered** (structured features) vs. **Raw** (images, audio)
+
+- Statistical models work with observational/raw data but can't reveal causality
+
+- Causal learning often needs
+  - Data from multiple environments or known interventions
+  - Assumptions like causal sufficiency
+
+- Future direction
+  - Replace expert-designed inputs with inductive biases, meta-learning, and self-supervision.
 
 
 ---
@@ -160,7 +204,7 @@ By Picard–Lindelöf, this has a unique solution if $f$ is Lipschitz
 
 
 
-<img src="figures/Fig1.png" alt="Histogram" width="400">
+<img src="figures/Fig1.png" alt="Histogram" width="800">
 
 
 
@@ -181,14 +225,14 @@ By Picard–Lindelöf, this has a unique solution if $f$ is Lipschitz
 
 
 
-<img src="figures/Fig2.png" alt="Histogram" width="400">
+<img src="figures/Fig2.png" alt="Histogram" width="800">
 
 
 --
 
 
 
-<img src="figures/Fig3.png" alt="Histogram" width="400">
+<img src="figures/Fig3.png" alt="Histogram" width="600">
 
 
 
