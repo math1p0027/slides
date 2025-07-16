@@ -160,8 +160,7 @@ By Picard–Lindelöf, this has a unique solution if $f$ is Lipschitz
 
 
 
-![Histogram](figures/Fig 1.png)
-
+<img src="figures/Fig1.png" alt="Histogram" width="400">
 
 
 
