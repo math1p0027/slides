@@ -507,9 +507,15 @@ Conclusion ->  SSL is expected to be ineffective in this causal direction
 # VII. IMPLICATIONS FOR MACHINE LEARNING
 ## B. Adversarial Vulnerability
 
+- Adversarial attacks violate i.i.d. -> exploit non-causal features.
 
+- Causal models (true generative direction) may be more robust.
 
+- Robustness improves when classifiers align with causal structure.
 
+- Defenses:
+  - Analysis by synthesis (model label -> input)
+  - Autoencoder preprocessing to remove spurious perturbations
 
 
 ---
@@ -517,22 +523,195 @@ Conclusion ->  SSL is expected to be ineffective in this causal direction
 ## C. Robustness and Strong Generalization
 
 
+- Causal models enable robustness to interventions & distribution shifts.
+
+- Use causal features (not just correlations) for better generalization.
+
+- Goal: Minimize worst-case risk across environments (e.g., different settings).
+
+- Requires modeling interventions and training on diverse data.
+
+
+
+
 ---
 # VII. IMPLICATIONS FOR MACHINE LEARNING
 ## D. Pre-training, Data Augmentation, and Self-Supervision
+
+- Pre-training: Use large, diverse datasets to improve generalization.
+
+- Augmentation: Apply synthetic changes (e.g. flips, crops) to build invariance.
+
+- Self-Supervision: Use unlabeled data + pretext tasks to learn transferable features.
+
+- Goal: Robust learning across varied environments with minimal labeled data.
+
+
+
+
 
 ---
 # VII. IMPLICATIONS FOR MACHINE LEARNING
 ## E. Reinforcement Learning
 
+
+- Causal Perspectives in RL:
+
+  - On-policy RL estimates do-probabilities directly.
+
+  - Off-policy / batch RL faces causal inference challenges due to observational data.
+
+
+-- 
+
+- a. World Models
+  - Model-based RL = learn causal effects of actions.
+
+  - Generative models simulate environments for safe agent training.
+
+  - Structured models can capture entities + causal relations.
+
+
+--
+
+- b. Generalization & Transfer
+  - RL agents struggle with generalization & data efficiency.
+
+  - Solution: learn invariant causal mechanisms to adapt to changes.
+
+  - Exploration (interventions) helps uncover causal structure.
+
+
+--
+
+- c. Counterfactuals
+  - Improve learning & decision-making by reasoning about “what could have happened.”
+
+  - Supports data efficiency, multi-agent communication, and planning.
+
+
+--
+
+- d. Offline RL
+  - Learn from fixed datasets (no interaction).
+
+  - Requires counterfactual reasoning to infer unseen actions’ outcomes.
+
+  - Causal modeling (e.g., invariances) can reduce distribution shift issues.
+
+
+
+
+
+ 
 ---
 # VII. IMPLICATIONS FOR MACHINE LEARNING
 ## F. Scientific Applications
+
+
+
+Goal -> Use ML to complement (not replace) scientific understanding, with causality playing a key role.
+
+--
+
+- Physics Simulations
+  - Neural networks boost efficiency of simulators.
+
+  - Works well in controlled environments, but needs retraining if conditions change.
+
+
+--
+
+- Healthcare & Medicine
+  - Personal health models (e.g. from EHR, genetics) require causal understanding to ensure reliable treatment recommendations.
+
+  - Training on doctors' decisions alone may fail in real-world settings.
+
+  - Causal models improve personalized medicine and pandemic analysis (e.g. Simpson’s paradox in COVID-19).
+
+
+
+--
+
+- Astronomy
+
+  - Causal models help remove measurement confounding in exoplanet detection.
+
+  - Enabled recovery of hidden signals -> discovery of 36 candidates, 21 validated.
+
+  - Led to finding water on exoplanet K2-18b, in the habitable zone.
+
+
+
+
 
 ---
 # VII. IMPLICATIONS FOR MACHINE LEARNING
 ##  G. Multi-Task Learning and Continual Learning
 
+
+- The Problem:
+  - Current AI is narrow - strong at specific tasks, weak at generalizing across diverse environments.
+
+- Humans excel due to:
+
+  - Discovering high-level abstractions
+
+  - Recognizing causal relationships
+
+  - Adapting to out-of-distribution (OOD) settings
+
+
+--
+
+**Multi-Task Learning**
+
+- Aim: Solve multiple tasks across varying environments.
+
+- Core idea: Share representations across tasks.
+
+- Causal models can help by learning shared data-generating processes with components satisfying the Sparse Mechanism Shift (SMS) hypothesis.
+
+- Evidence shows causal models adapt faster to sparse distribution shifts.
+
+
+--
+
+- Why Not Just Scale Models?
+  - Big models (e.g. large language or vision transformers) do generalize surprisingly well across interventions if:
+
+  - Data is sufficiently diverse (which is not always testable).
+
+  - Assumptions match the real-world dynamics.
+
+- But:
+
+  - Worst-case generalization errors can still be high under distribution shifts.
+
+  - Purely scaling doesn't explicitly capture environment structure or causal factors.
+
+
+--
+
+**Why Causality Still Matters**
+- Causality makes assumptions explicit and interpretable.
+
+- The Independent Causal Mechanisms (ICM) principle supports decomposing environments into modular, reusable parts.
+
+- Useful for:
+
+  - Generalizing across related environments
+
+  - Designing modular ML systems
+
+  - Enforcing structure aligned with physical and cognitive insights
+
+
+--
+
+Causality complements deep learning. 
+
+Combining both may be essential to build robust, general-purpose, and adaptable AI.
 
 
 
@@ -542,22 +721,76 @@ Conclusion ->  SSL is expected to be ineffective in this causal direction
 
 
 
+We explored the intersection of causality and machine learning, covering:
+
+- Fundamentals of causal inference
+
+- Independent Causal Mechanisms (ICM) and invariance as useful inductive biases
+
+- Learning from observational & interventional data when causal variables are known
+
+- The open challenge of causal representation learning
+
+- Applications to open ML problems: semi-supervised learning, domain generalization, and robustness
+
+--
+
+## a. Learning Non-Linear Causal Relations at Scale
+
+- Use modern ML to model complex, scalable causal relations
+
+- Research goals:
+
+  - When can we reliably learn non-linear causal structure?
+
+  - Which ML frameworks are best suited?
+
+  - Show causal models outperform statistical ones in generalization & reuse
 
 
 
+--
+
+## b. Learning Causal Variables
+
+- Current deep models output entangled vector-based representations
+
+- Need:
+
+  - Modular, flexible representations (e.g., variable number of objects)
+
+  - Causal representations that adapt to the task and interventions
+
+  - Study how and when these variables can be reliably extracted
 
 
 
+--
+
+## c. Understanding Biases in Deep Learning
+
+- Current robustness gains stem from data scale, augmentation, and pre-training, but:
+
+  - Which elements really help? Why?
+
+  - We need a taxonomy of inductive biases aligned with causality
+
+  - Pre-training choices should be examined for their causal generalization impact
 
 
+--
 
+## d. Causal Models for World & Agent (in RL)
 
+- In many RL settings, no abstract state space is given
 
+- Goal: learn causal variables from raw data (e.g., pixels)
 
+- Needed for:
 
+  - Causal induction in real-world tasks
 
-
-
+  - Building causal world models that support planning, robustness, and generalization
 
 
 
@@ -567,187 +800,8 @@ Conclusion ->  SSL is expected to be ineffective in this causal direction
 
 
 ---
-# Inline Math
 
-This is Einstein's formula: $E = mc^2$
-
-
-
----
-
-# Block Math
-
-$$
-\int_0^\infty e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
-$$
-
----
-
-# Vertical slides
-
-This is the parent of vertical slides.
-
---
-## Vertical slide 1
-
-This is a vertical slide under the parent slide.
-
---
-## Vertical slide 2
-
-Another vertical slide under the parent slide.
-
----
-
-# Add figures
-
-Add a figure with Markdown code
-
-```markdown
-    ![Histogram of the solution of a bistable ODE](figures/demo.png)
-```
-
-![Histogram](figures/demo.png)
-
---
-
-or with HTML code for more control
-
-```html
-<img src="figures/demo.png" alt="Histogram" width="400">
-```
-
-<img src="figures/demo.png" alt="Histogram" width="400">
-
---
-
-or with percentage
-
-```html
-<img src="figures/demo.png" alt="Histogram" style="width:40%">
-```
-
-<img src="figures/demo.png" alt="Histogram" style="width:40%">
-
---
-
-You can add a caption like this
-```html
-<figure>
-  <img src="figures/demo.png" alt="Time series" style="width:70%">
-  <figcaption>Figure 1: Histogram of the solution of a bistable ODE</figcaption>
-</figure>
-```
-
-<figure>
-  <img src="figures/demo.png" alt="Time series" style="width:70%">
-  <figcaption>Figure 1: Histogram of the solution of a bistable ODE</figcaption>
-</figure>
-
----
-
-# Show a video
-
-```html
-<video src="media/video.mp4" autoplay muted loop style="width: 60%"></video>
-```
-
-<video src="media/video.mp4" autoplay muted loop style="width: 60%"></video>
-
-
----
-
-# Code blocks
-
-<pre><code class="language-python" data-trim>
-def fibonacci(n):
-    if n <= 1:
-        return n
-    return fibonacci(n-1) + fibonacci(n-2)
-</code></pre>
-
-
---
-
-# Code blocks with highlighting
-
-<pre><code class="language-python" data-trim data-line-numbers="3,5-6,10">
-import numpy as np
-import matplotlib.pyplot as plt
-
-def simulate_ode(f, y0, t):
-    """Simple forward Euler ODE solver."""
-    y = np.zeros_like(t)
-    y[0] = y0
-    for i in range(1, len(t)):
-        dt = t[i] - t[i-1]
-        y[i] = y[i-1] + dt * f(t[i-1], y[i-1])
-    return y
-
-# Example usage
-f = lambda t, y: -0.5 * y
-t = np.linspace(0, 10, 100)
-y = simulate_ode(f, 1.0, t)
-
-plt.plot(t, y)
-plt.title("Exponential Decay")
-plt.xlabel("Time")
-plt.ylabel("y(t)")
-plt.grid()
-plt.show()
-</code></pre>
-
-
---
-
-<section>
-  <h3>Code blocks with animations</h3>
-
-  <div class="fragment">
-    <pre><code class="language-python" data-trim data-line-numbers>
-import numpy as np
-import matplotlib.pyplot as plt
-    </code></pre>
-  </div>
-
-  <div class="fragment">
-    <pre><code class="language-python" data-trim data-line-numbers>
-def simulate_ode(f, y0, t):
-    """Simple forward Euler ODE solver."""
-    y = np.zeros_like(t)
-    y[0] = y0
-    for i in range(1, len(t)):
-        dt = t[i] - t[i-1]
-        y[i] = y[i-1] + dt * f(t[i-1], y[i-1])
-    return y
-    </code></pre>
-  </div>
-
-  <div class="fragment">
-    <pre><code class="language-python" data-trim data-line-numbers>
-f = lambda t, y: -0.5 * y
-t = np.linspace(0, 10, 100)
-y = simulate_ode(f, 1.0, t)
-    </code></pre>
-  </div>
-
-  <div class="fragment">
-    <pre><code class="language-python" data-trim data-line-numbers>
-plt.plot(t, y)
-plt.title("Exponential Decay")
-plt.xlabel("Time")
-plt.ylabel("y(t)")
-plt.grid()
-plt.show()
-    </code></pre>
-  </div>
-</section>
-
-
-
----
-
-### 🦧 That is all 🦧
+### Thank you!
 
 
 
