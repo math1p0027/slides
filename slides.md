@@ -223,7 +223,7 @@ By Picard–Lindelöf, this has a unique solution if $f$ is Lipschitz
 
 #  C. Structural causal models (SCMs)
 
-- SCM Definition: Each variable $ X_i := f_i (PA_i, U_i) $
+- **SCM Definition**: Each variable $ X_i := f_i (PA_i, U_i) $
   - $PA_i$ is the parent variables (causes)
   - $U_i$ is the independent noise (captures randomness)
   - It is represented as a Directed Acyclic Graph (DAG)
@@ -274,10 +274,46 @@ Knowing which interventions are possible/allowed helps guide causal discovery an
 
 #  IV. INDEPENDENT CAUSAL MECHANISMS
 
+- A system's generative process consists of independent modules (mechanisms) that do not inform or influence one another.
+
+- This implies:
+
+  -Modularity: Each causal mechanism operates independently.
+
+  - Separate intervenability: You can intervene on one mechanism without affecting others.
+
+  - Invariance: Mechanisms stay stable across settings or interventions.
+
 
 
 --
+**Sparse Mechanism Shift (SMS) Hypothesis**
 
+- When distribution shifts occur (e.g., across domains), they typically affect only a few mechanisms in the causal model.
+
+- Contrast:
+  - Causal factorization: Shift is localized, easier to generalize across settings.
+  - Statistical (entangled) factorization: Shift spreads across many terms, harder to adapt.
+
+- Supports robust generalization, transfer learning, and domain adaptation
+
+--
+**Algorithmic View of ICM**
+
+- Mechanism independence can be formalized via algorithmic information theory:
+
+  - A mechanism = bit string (shortest program encoding it).
+
+  - Two mechanisms are independent if compressing them together doesn’t save space.
+
+- Suggests causality is not limited to statistics.
+
+  - Leads to algorithmic causal models using Kolmogorov complexity.
+
+  - Independent programs (noise terms) ⟺ Independent mechanisms
+
+
+--
 
 
 <img src="figures/Fig1.png" alt="Histogram" width="1000">
