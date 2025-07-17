@@ -324,6 +324,42 @@ Knowing which interventions are possible/allowed helps guide causal discovery an
 
 #  V. CAUSAL DISCOVERY AND MACHINE LEARNING
 
+- Learn causal structure from data 
+- Challenges:
+
+  - Conditional independence testing is hard with finite, high-dimensional data.
+
+  - Doesn’t work well in the 2-variable case.
+
+- Solution: Use assumptions about function classes (common in ML).
+
+--
+
+**Additive Noise & Distribution Shifts**
+
+- Additive Noise Models (ANMs):
+
+$$Y = f(X) + noise$$
+
+  - Helps identify causal direction (X→Y fits, Y→X doesn't).
+
+- Distribution Shifts Help:
+
+  - Causal structure is invariant across environments.
+
+  - Use data from different contexts/tasks (e.g., interventions, time, views).
+
+--
+
+**Modern Approaches**
+
+- Neural networks: Learn causal graphs via continuous optimization.
+
+- Reinforcement learning: Agents explore to discover causality.
+
+- Causal models are expected to generalize better under changes than purely predictive ones.
+
+
 
 ---
 
