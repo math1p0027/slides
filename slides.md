@@ -377,12 +377,80 @@ $$Y = f(X) + noise$$
 
 
 --
+- Observations $X = G(S_1 ... S_n)$ — high-dimensional data is a nonlinear mixture of underlying causal variables.
 
+- Goal: Learn a representation that reveals these causal variables and their relations.
 
+- Neural networks map raw data to meaningful high-level variables to support downstream tasks.
+
+- Causal inductive biases like SMS hypothesis help learning.
+
+--
+
+**Challenges in Learning Causal Variables**
+
+- Causal variables are not given, they must be learned from data.
+
+- Variables depend on the granularity of the data and available interventions or distribution shifts.
+
+- Representation learning aims for robustness, interpretability, and fairness.
+
+- Need to embed causal models inside larger ML models with high-dimensional inputs/outputs.
+
+--
+
+# Problem 1 — Learning Disentangled Representations
+
+- Disentanglement means representing data as independent factors corresponding to causal variables.
+
+- The Independent Causal Mechanisms (ICM) principle implies noise variables should be independent.
+
+- Encoder-decoder frameworks (autoencoders) can learn latent variables that ideally correspond to causal factors.
+
+- Object-centric learning as a special case of disentanglement.
+
+--
+# Using the ICM Principle for Causal Learning
+
+- Make noise terms $U_i$ statistically independent.
+
+- Mechanisms should be independently manipulable and invariant across problems.
+
+- SMS hypothesis: sparse changes in mechanisms help identify causal factors.
+
+- Different supervision signals or interventions affect which variables can be disentangled.
+
+--
+# Problem 2 — Learning Transferable Mechanisms
+
+- Real-world agents face limited data and computational resources.
+
+- Modular structures reflecting the modularity of the world help reuse knowledge across tasks.
+
+- Example: Visual system factors out lighting variations rather than relearning face recognition.
+
+- Bias towards models with structural similarity (homomorphism) to the real world's modular structure.
+
+--
+
+# Problem 3 — Learning Interventional World Models and Reasoning
+
+- Deep learning captures statistical dependencies but ignores causal intervention properties.
+
+- Causal models enable reasoning, planning, and imagining alternative scenarios (thinking as acting in imagined space).
+
+- Importance of representing oneself and “free will” for social and cultural learning (future research frontier).
+
+--
 
 <img src="figures/Fig3.png" alt="Histogram" width="600">
 
 
+--
+
+- Pixel-level changes appear widespread and entangled.
+
+- Causal model shows localized, sparse changes, which is easier to interpret and reason about.
 
 ---
 
