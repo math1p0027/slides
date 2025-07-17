@@ -185,6 +185,8 @@ By Picard–Lindelöf, this has a unique solution if $f$ is Lipschitz
 
   - **i.i.d. assumption**
 
+--
+
 - Limitations of i.i.d.
   - Fails under distribution shifts:
     - Different real-world conditions ( different clinics or countries)
@@ -205,12 +207,6 @@ By Picard–Lindelöf, this has a unique solution if $f$ is Lipschitz
   <strong>Reichenbach’s Common Cause Principle::</strong>If X and Y are statistically dependent, there's a variable Z causing both, such that X ⟶ Z ⟶ Y explains the dependence.
 </div>
 
-- Example:
-  - X = Number of storks, Y = birth rate
-  - Possible causes:
-    - X -> Y (Storks cause babies, unlikely)
-    - Y -> X (Babies attract storks, unlikely)
-    - Z → X and Z → Y: A hidden factor (Z) like economic development influences both
 
 - Limitation of Observational Data:
 
@@ -227,12 +223,12 @@ By Picard–Lindelöf, this has a unique solution if $f$ is Lipschitz
 
 #  C. Structural causal models (SCMs)
 
-SCM Definition: Each variable $ X_i := f_i (PA_i, U_i) $
+- SCM Definition: Each variable $ X_i := f_i (PA_i, U_i) $
   - $PA_i$ is the parent variables (causes)
   - $U_i$ is the independent noise (captures randomness)
   - It is represented as a Directed Acyclic Graph (DAG)
 
-
+--
 **Key Concepts**
 - Causal Markov Condition: $X_i$ is independent of non-descendants given $PA_i$
 - Causal Factorization:
