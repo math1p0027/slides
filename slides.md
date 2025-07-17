@@ -377,7 +377,7 @@ $$Y = f(X) + noise$$
 
 
 --
-- Observations $X = G(S_1 ... S_n)$ — high-dimensional data is a nonlinear mixture of underlying causal variables.
+- Observations $X = G(S_1 ... S_n)$. High-dimensional data is a nonlinear mixture of underlying causal variables.
 
 - Goal: Learn a representation that reveals these causal variables and their relations.
 
@@ -455,36 +455,49 @@ $$Y = f(X) + noise$$
 ---
 
 # VII. IMPLICATIONS FOR MACHINE LEARNING
+##  A. Semi-Supervised Learning (SSL)
 
---
-
-#  A. Semi-Supervised Learning (SSL)
-
---
-
-# B. Adversarial Vulnerability
 
 
 --
 
-# C. Robustness and Strong Generalization
 
+
+-Traditional ML assumes data is i.i.d. (same distribution in train & test)
+
+Causal perspective: distributions may change, but causal mechanisms stay mostly stable
+
+This challenges how we use unlabeled data in SSL
+
+
+
+
+
+---
+# VII. IMPLICATIONS FOR MACHINE LEARNING
+## B. Adversarial Vulnerability
+
+
+---
+# VII. IMPLICATIONS FOR MACHINE LEARNING
+## C. Robustness and Strong Generalization
+
+
+---
+# VII. IMPLICATIONS FOR MACHINE LEARNING
+## D. Pre-training, Data Augmentation, and Self-Supervision
+
+---
+# VII. IMPLICATIONS FOR MACHINE LEARNING
+## E. Reinforcement Learning
+
+---
+# VII. IMPLICATIONS FOR MACHINE LEARNING
+## F. Scientific Applications
 
 --
-
-# D. Pre-training, Data Augmentation, and Self-Supervision
-
---
-
- # E. Reinforcement Learning
-
---
-
-# F. Scientific Applications
-
---
-
-#  G. Multi-Task Learning and Continual Learning
+# VII. IMPLICATIONS FOR MACHINE LEARNING
+##  G. Multi-Task Learning and Continual Learning
 
 
 
