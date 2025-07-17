@@ -73,9 +73,11 @@ As a result
 
 Gold standard: A set of differential equations describe how physical systems evolve over time.
 
-These equations:  - Predict future behavior
-                  - Describe interventions and causal structure
-                  - Provide physical insight
+These equations:  
+
+  - Predict future behavior
+  - Describe interventions and causal structure
+  - Provide physical insight
 
 
 Example:
@@ -159,8 +161,6 @@ By Picard–Lindelöf, this has a unique solution if $f$ is Lipschitz
   - Data from multiple environments or known interventions
   - Assumptions like causal sufficiency
 
-- Future direction
-  - Replace expert-designed inputs with inductive biases, meta-learning, and self-supervision.
 
 
 ---
@@ -189,13 +189,13 @@ By Picard–Lindelöf, this has a unique solution if $f$ is Lipschitz
 
 - Limitations of i.i.d.
   - Fails under distribution shifts:
-    - Different real-world conditions ( different clinics or countries)
+    - Different real-world conditions (different clinics or countries)
     - Adversarial examples break models with small image changes
-    - Models confuse cause and effect (e.g., recommending a laptop after a laptop bag)
+    - Models confuse cause and effect 
   - i.i.d. systems lack causal understanding
 
     - Cannot reason about interventions
-    -Struggle in dynamic or changing environments
+    - Struggle in dynamic or changing environments
 
 
 --
@@ -204,7 +204,7 @@ By Picard–Lindelöf, this has a unique solution if $f$ is Lipschitz
 
 
 <div style="border: 2px solid #4CAF50; padding: 10px; border-radius: 5px; background-color: #f9f9f9;">
-  <strong>Reichenbach’s Common Cause Principle::</strong>If X and Y are statistically dependent, there's a variable Z causing both, such that X ⟶ Z ⟶ Y explains the dependence.
+  <strong>Reichenbach’s Common Cause Principle:</strong>If X and Y are statistically dependent, there's a variable Z causing both, such that X ⟶ Z ⟶ Y explains the dependence.
 </div>
 
 
@@ -278,7 +278,7 @@ Knowing which interventions are possible/allowed helps guide causal discovery an
 
 - This implies:
 
-  -Modularity: Each causal mechanism operates independently.
+  - Modularity: Each causal mechanism operates independently.
 
   - Separate intervenability: You can intervene on one mechanism without affecting others.
 
@@ -298,7 +298,7 @@ Knowing which interventions are possible/allowed helps guide causal discovery an
 - Supports robust generalization, transfer learning, and domain adaptation
 
 --
-**Algorithmic View of ICM**
+**Algorithmic View of Independent Causal Mechanisms (ICM)**
 
 - Mechanism independence can be formalized via algorithmic information theory:
 
@@ -383,7 +383,7 @@ $$Y = f(X) + noise$$
 
 - Neural networks map raw data to meaningful high-level variables to support downstream tasks.
 
-- Causal inductive biases like SMS hypothesis help learning.
+- Causal inductive biases like Sparse Mechanism Shift (SMS) hypothesis help learning.
 
 --
 
@@ -488,7 +488,9 @@ Conclusion ->  SSL is expected to be ineffective in this causal direction
 - Unlabeled data helps improve learning
 - Example: Image classification where label -> image (anticausal)
 
+
 -- 
+
 
 **Relation to SSL Assumptions**
 
@@ -562,7 +564,10 @@ Conclusion ->  SSL is expected to be ineffective in this causal direction
   - Off-policy / batch RL faces causal inference challenges due to observational data.
 
 
+
+
 -- 
+
 
 - a. World Models
   - Model-based RL = learn causal effects of actions.
