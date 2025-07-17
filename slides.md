@@ -459,16 +459,46 @@ $$Y = f(X) + noise$$
 
 
 
+- Traditional ML assumes data is i.i.d. (same distribution in train & test)
+
+- Causal perspective: distributions may change, but causal mechanisms stay mostly stable
+
+- This challenges how we use unlabeled data in SSL
+
 --
 
+### SSL and Causal Direction
 
+Assume causal graph: X -> Y (X causes Y)
 
--Traditional ML assumes data is i.i.d. (same distribution in train & test)
+Joint distribution factorizes as  $ P(X, Y) = P(X) \times P(Y | X) $
 
-Causal perspective: distributions may change, but causal mechanisms stay mostly stable
+ICM Principle:  $P(X)$ and $P(Y | X)$ are independent
 
-This challenges how we use unlabeled data in SSL
+Implication: Knowing $P(X)$ (unlabeled data) does not help improve $P(Y | X)$
 
+Conclusion ->  SSL is expected to be ineffective in this causal direction
+
+--
+
+**SSL works better in the Anticausal Direction**
+
+- Predicting cause from effect ( Y -> X)
+- Marginal $P(X)$ contains info about conditional $P(Y|X)$
+- Unlabeled data helps improve learning
+- Example: Image classification where label -> image (anticausal)
+
+-- 
+
+**Relation to SSL Assumptions**
+
+- Cluster assumption: labels stable within clusters of $P(X)$
+
+- Low-density separation: decision boundaries lie in low-density regions
+
+- Smoothness: nearby points in $P(X)$ have similar outputs
+
+- These assumptions align with SSL success in anticausal settings
 
 
 
@@ -476,6 +506,10 @@ This challenges how we use unlabeled data in SSL
 ---
 # VII. IMPLICATIONS FOR MACHINE LEARNING
 ## B. Adversarial Vulnerability
+
+
+
+
 
 
 ---
@@ -495,7 +529,7 @@ This challenges how we use unlabeled data in SSL
 # VII. IMPLICATIONS FOR MACHINE LEARNING
 ## F. Scientific Applications
 
---
+---
 # VII. IMPLICATIONS FOR MACHINE LEARNING
 ##  G. Multi-Task Learning and Continual Learning
 
