@@ -167,11 +167,33 @@ By Picard–Lindelöf, this has a unique solution if $f$ is Lipschitz
 
 #  III. CAUSAL MODELS AND INFERENCE
 
+- This section explores the difference between statistical and causal models.
+
+- It also introduces a formal framework for reasoning about interventions and distribution shifts.
+
 --
 
 # A. Methods driven by i.i.d. data
 
+- Most ML successes rely on
 
+  - Large labeled datasets (human-made or simulated)
+
+  - High-capacity models (neural nets etc.)
+
+  - Powerful computing resources.
+
+  - **i.i.d. assumption**
+
+- Limitations of i.i.d.
+  - Fails under distribution shifts:
+    - Different real-world conditions ( different clinics or countries)
+    - Adversarial examples break models with small image changes
+    - Models confuse cause and effect (e.g., recommending a laptop after a laptop bag)
+  - i.i.d. systems lack causal understanding
+
+    - Cannot reason about interventions
+    -Struggle in dynamic or changing environments
 
 
 --
@@ -180,18 +202,76 @@ By Picard–Lindelöf, this has a unique solution if $f$ is Lipschitz
 
 
 <div style="border: 2px solid #4CAF50; padding: 10px; border-radius: 5px; background-color: #f9f9f9;">
-  <strong>Definition:</strong> A <em>function</em> is a relation between a set of inputs and a set of permissible outputs.
+  <strong>Reichenbach’s Common Cause Principle::</strong>If X and Y are statistically dependent, there's a variable Z causing both, such that X ⟶ Z ⟶ Y explains the dependence.
 </div>
+
+- Example:
+  - X = Number of storks, Y = birth rate
+  - Possible causes:
+    - X -> Y (Storks cause babies, unlikely)
+    - Y -> X (Babies attract storks, unlikely)
+    - Z → X and Z → Y: A hidden factor (Z) like economic development influences both
+
+- Limitation of Observational Data:
+
+  - Can't distinguish between causal structures (X ⟶ Y vs Y ⟶ X vs Z ⟶ both)
+
+  - All produce the same observed dependence
+
+- More Variables Help:
+  - Conditional independence between variables can reveal causal direction
+
+  - Leads to causal graphs and structural causal models (SCMs)
 
 --
 
 #  C. Structural causal models (SCMs)
 
+SCM Definition: Each variable $ X_i := f_i (PA_i, U_i) $
+  - $PA_i$ is the parent variables (causes)
+  - $U_i$ is the independent noise (captures randomness)
+  - It is represented as a Directed Acyclic Graph (DAG)
+
+
+**Key Concepts**
+- Causal Markov Condition: $X_i$ is independent of non-descendants given $PA_i$
+- Causal Factorization:
+    $$ P(X_1, X_2,...,X_n) = \prod_{i=1}^n  P(X_i|PA_i)$$
+
+    Which reflects causal structure, unlike arbitrary factorizations
+- Latent Variables: some variables may be unobserved (latent), which can confuse causal relationships
+- Learning: Observational data + independence tests -> partial graph structure
 
 
 --
 
+ **Interventions in SCMs**
+
+
+- No intervention: Passive observation
+
+- Hard (perfect): Set variable to fixed value
+
+- Soft (imperfect): Modify function or noise 
+
+- Uncertain: Don’t know which variable or function was changed.
+
+Knowing which interventions are possible/allowed helps guide causal discovery and ensures the model is useful for real tasks.
+
+
+ 
+
+--
 # D. Difference Between Statistical Models, Causal Graphical Models, and SCMs
+
+- **Statistical models** capture correlations but can't distinguish cause from effect or handle interventions.
+
+- **Causal graphical models** add directionality (cause -> effect) and allow us to model interventions.
+
+- **Structural Causal Models (SCMs)**:
+  - Define variables as functions of their causes and noise: $X_i = f_i(PA_i,U_i)$
+  - Enable reasoning about interventions (changing the system) and counterfactuals (what would have happened).
+
 
 
 ---
@@ -204,7 +284,7 @@ By Picard–Lindelöf, this has a unique solution if $f$ is Lipschitz
 
 
 
-<img src="figures/Fig1.png" alt="Histogram" width="800">
+<img src="figures/Fig1.png" alt="Histogram" width="1000">
 
 
 
@@ -225,7 +305,7 @@ By Picard–Lindelöf, this has a unique solution if $f$ is Lipschitz
 
 
 
-<img src="figures/Fig2.png" alt="Histogram" width="800">
+<img src="figures/Fig2.png" alt="Histogram" width="1000">
 
 
 --
