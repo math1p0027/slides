@@ -3,7 +3,7 @@
  Bernhard Schölkopf , Francesco Locatello , Stefan Bauer , Nan Rosemary Ke , Nal Kalchbrenner
  Anirudh Goyal, Yoshua Bengio
 
-Sofia Zervaki, 2025, a
+Sofia Zervaki, 2025, b
 
 ---
 # I. Introduction
@@ -489,7 +489,8 @@ Conclusion ->  SSL is expected to be ineffective in this causal direction
 - Example: Image classification where label -> image (anticausal)
 
 
--- 
+--
+
 **Relation to SSL Assumptions**
 
 - Cluster assumption: labels stable within clusters of $P(X)$
@@ -562,7 +563,8 @@ Conclusion ->  SSL is expected to be ineffective in this causal direction
   - Off-policy / batch RL faces causal inference challenges due to observational data.
 
 
--- 
+--
+
 - a. World Models
   - Model-based RL = learn causal effects of actions.
 
