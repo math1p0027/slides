@@ -106,7 +106,7 @@ By Picard–Lindelöf, this has a unique solution if $f$ is Lipschitz
 
 - Statistical models are trained to approximate probabilities 
 
-- For a given set of input examples X and target labels Y, we want approximating $P(Y|X)$ 
+- For a given set of input examples X and target labels Y, we want to approximate $P(Y|X)$ 
 
 - This works well for standard prediction tasks, but 
 
@@ -204,7 +204,7 @@ By Picard–Lindelöf, this has a unique solution if $f$ is Lipschitz
 
 
 <div style="border: 2px solid #4CAF50; padding: 10px; border-radius: 5px; background-color: #f9f9f9;">
-  <strong>Reichenbach’s Common Cause Principle:</strong>If X and Y are statistically dependent, there's a variable Z causing both, such that X ⟶ Z ⟶ Y explains the dependence.
+  <strong>Reichenbach’s Common Cause Principle:</strong> if two observables X and Y are statistically dependent, then there exists a variable Z that causally influences both and explains all the dependence in the sense of making them independent when conditioned on Z
 </div>
 
 
