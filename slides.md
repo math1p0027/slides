@@ -3,7 +3,7 @@
  Bernhard Schölkopf , Francesco Locatello , Stefan Bauer , Nan Rosemary Ke , Nal Kalchbrenner
  Anirudh Goyal, Yoshua Bengio
 
-Sofia Zervaki, 2025
+Sofia Zervaki, 2025, a
 
 ---
 # I. Introduction
@@ -490,8 +490,6 @@ Conclusion ->  SSL is expected to be ineffective in this causal direction
 
 
 -- 
-
-
 **Relation to SSL Assumptions**
 
 - Cluster assumption: labels stable within clusters of $P(X)$
@@ -553,7 +551,6 @@ Conclusion ->  SSL is expected to be ineffective in this causal direction
 
 
 ---
-
 # VII. IMPLICATIONS FOR MACHINE LEARNING
 ## E. Reinforcement Learning
 
@@ -566,8 +563,6 @@ Conclusion ->  SSL is expected to be ineffective in this causal direction
 
 
 -- 
-
-
 - a. World Models
   - Model-based RL = learn causal effects of actions.
 
@@ -577,7 +572,6 @@ Conclusion ->  SSL is expected to be ineffective in this causal direction
 
 
 --
-
 - b. Generalization & Transfer
   - RL agents struggle with generalization & data efficiency.
 
