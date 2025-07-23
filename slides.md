@@ -553,6 +553,7 @@ Conclusion ->  SSL is expected to be ineffective in this causal direction
 
 
 ---
+
 # VII. IMPLICATIONS FOR MACHINE LEARNING
 ## E. Reinforcement Learning
 
@@ -562,8 +563,6 @@ Conclusion ->  SSL is expected to be ineffective in this causal direction
   - On-policy RL estimates do-probabilities directly.
 
   - Off-policy / batch RL faces causal inference challenges due to observational data.
-
-
 
 
 -- 
