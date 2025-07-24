@@ -3,7 +3,7 @@
  Bernhard Schölkopf , Francesco Locatello , Stefan Bauer , Nan Rosemary Ke , Nal Kalchbrenner
  Anirudh Goyal, Yoshua Bengio
 
-Sofia Zervaki, 2025, b
+Sofia Zervaki, 2025
 
 ---
 # I. Introduction
@@ -349,17 +349,6 @@ $$Y = f(X) + noise$$
 
   - Use data from different contexts/tasks (e.g., interventions, time, views).
 
---
-
-**Modern Approaches**
-
-- Neural networks: Learn causal graphs via continuous optimization.
-
-- Reinforcement learning: Agents explore to discover causality.
-
-- Causal models are expected to generalize better under changes than purely predictive ones.
-
-
 
 ---
 
@@ -377,6 +366,9 @@ $$Y = f(X) + noise$$
 
 
 --
+
+# The goal of causal representation learning
+
 - Observations $X = G(S_1 ... S_n)$. High-dimensional data is a nonlinear mixture of underlying causal variables.
 
 - Goal: Learn a representation that reveals these causal variables and their relations.
