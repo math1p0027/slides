@@ -437,13 +437,6 @@ $$Y = f(X) + noise$$
 
 <img src="figures/Fig3.png" alt="Histogram" width="600">
 
-
---
-
-- Pixel-level changes appear widespread and entangled.
-
-- Causal model shows localized, sparse changes, which is easier to interpret and reason about.
-
 ---
 
 # VII. IMPLICATIONS FOR MACHINE LEARNING
@@ -478,7 +471,7 @@ Conclusion ->  SSL is expected to be ineffective in this causal direction
 - Predicting cause from effect ( Y -> X)
 - Marginal $P(X)$ contains info about conditional $P(Y|X)$
 - Unlabeled data helps improve learning
-- Example: Image classification where label -> image (anticausal)
+
 
 
 --
