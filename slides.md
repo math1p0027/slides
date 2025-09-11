@@ -1,90 +1,36 @@
-# Towards causal Representation Learning
+# A Review of Causality for Learning Algorithms in Medical Image Analysis
 
- Bernhard Schölkopf , Francesco Locatello , Stefan Bauer , Nan Rosemary Ke , Nal Kalchbrenner
- Anirudh Goyal, Yoshua Bengio
+ Athanasios Vlontzos, Daniel Rueckert, Bernhard Kainz
 
 Sofia Zervaki, 2025
 
 ---
-# I. Introduction
+# Introduction
 
-- ML struggles with strong generalization.
+- Medical imaging covers MRI, CT, X-ray, and Ultrasound → crucial for diagnosis & monitoring.
 
-- ML systems often ignore:
-  - Interventions
-  - Domain shifts
-  - Temporal structure
+- ML has shown success in lesion detection, segmentation, and scan alignment.
 
-- Most ML success comes from recognizing patterns in i.i.d. data.
-
-The paper outlines some key ML challenges where causality matters.
-
---
-# Issue 1: Robustness
-
-- Deep learning models often fail under small changes in input data.
-- Benchmarks evaluate models under such shifts, with solutions like
-  - Data augmentation
-  - Pre-training
-  - Self-supervision
-  - Architectures with inductive biases
-
-- The authors argue that those fixes may not be sufficient 
-- To generalize beyond the i.i.d setting we need **Causal Models** which go beyond just spotting patterns
-
+- Many AI methods fail in clinical practice due to poor robustness & skipped readiness stages
 
 --
 
-# Issue 2: Learning Reusable Mechanisms
 
-- Humans learn intuitively
-
-- This lets them reuse knowledge to learn new tasks quickly
-
-- For ML Systems, Agents should build modular representations of the world
-
-  - Each module = a causal mechanism (like gravity, friction, etc.)
-
-As a result 
-
-- In new tasks/environments only some modules need updating
-
-- Most knowledge can be reused without retraining
-
+<img src="figures/Figure1(2).png" alt="Histogram" width="1000">
 
 --
 
-# A Causality Perspective: 
+- TRLs describe the stages from research → deployment.
 
-- Conditional probabilities don’t explain what happens when we intervene
+- Many ML systems in medical imaging jump from TRL 4 (PoC) → TRL 7 (Integration).
 
-- Intervention
-  - Causality requires reasoning about actions and changes
-  - Goes beyond what’s observed and includes
-    - Hypothetical scenarios
-    - Counterfactuals
-    - Deliberate reasoning
+- This skips TRL 5–6, where algorithms are made robust and production-ready.
     
 ---
 
-#  II. LEVELS OF CAUSAL MODELING
+#  Background
 
-## Physical Models
-
-Gold standard: A set of differential equations describe how physical systems evolve over time.
-
-These equations:  
-
-  - Predict future behavior
-  - Describe interventions and causal structure
-  - Provide physical insight
-
-
-Example:
-
-$ \frac{dx}{dt} = f(x)$, with $x \in R^d$ and initial value $x(t_0)=x_0$
-
-By Picard–Lindelöf, this has a unique solution if $f$ is Lipschitz
+## 2.1 Structural causal models
 
 
 --
