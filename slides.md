@@ -20,7 +20,7 @@ Sofia Zervaki, 2025
 
 --
 
-- TRLs describe the stages from research → deployment.
+- TRLs describe the stages from research -> deployment.
 
 - Many ML systems in medical imaging jump from TRL 4 (PoC) → TRL 7 (Integration).
 
@@ -28,153 +28,74 @@ Sofia Zervaki, 2025
     
 ---
 
-#  Background
+#  Why Causality Matters in Medical Imaging
 
-## 2.1 Structural causal models
+- Current AI/ML often confuses correlation and causation
 
+  - Example: COVID-19 X-rays ->  models learned hospital IDs/ethnicity, not disease (DeGrave et al., 2021).
 
---
-# Summary of different modeling approaches
+- Domain shifts reduce robustness:
 
+  - Population shifts – disease prevalence differs across regions.
 
-| Model Type           | Predict in i.i.d. | Predict under shift/intervention | Answer counterfactuals | Obtain physical insight | Learn from data |
-|----------------------|------------------|----------------------------------|-------------------------|--------------------------|------------------|
-| Mechanistic/Physical | Yes              | Yes                              | Yes                     | Yes                      | ?                |
-| Structural Causal    | Yes              | Yes                              | Yes                     | ?                        | ?                |
-| Causal Graphical     | Yes              | Yes                              | No                      | ?                        | ?                |
-| Statistical          | Yes              | No                               | No                      | No                       | Yes              |
+  - Acquisition/annotation shifts – scanner settings, radiologist biases.
 
+  - Data selection bias – limited datasets in medical domains.
 
+- Causal analysis can mitigate these biases → safer & more adaptable ML.
 
 --
+# Background 
 
-#  A. Predicting in the i.i.d. setting
+- *Structural Causal Models (SCM)*
 
-- Statistical models are trained to approximate probabilities 
+  - Represent cause–effect relations with variables and functions.
 
-- For a given set of input examples X and target labels Y, we want to approximate $P(Y|X)$ 
+  - Use Directed Acyclic Graphs (DAGs) to show dependencies.
 
-- This works well for standard prediction tasks, but 
+- *Do-Operator (do(x))*
 
-**Accurate predictions is not equal to causal understanding**
+  - Simulates interventions: "What happens if we force X = x?"
 
-
-- they can fail when the distribution of the data changes (intervention, real-world actions etc.)
-
+  - Lets us estimate causal effects, not just correlations.
 
 
 --
 
-#  B. Predicting Under Distribution Shifts
-
-- Interventions change variable values or their relationships, violating i.i.d. assumptions.
-
-- Classical ML models often fail when deployed in real-world settings where distributions shift
-
-- Causal models help build systems that remain accurate under such changes.
-
-- Robust prediction requires more than test set accuracy. We need to trust that
-    - **the predictions of the algorithm will remain valid if the conditions change**
+  
+# Counterfactual Inference & Twin Networks
 
 
+- Counterfactuals “What would Y have been if X had been different?”
 
---
-#  C. Answering Counterfactual Questions
+- Computed using SCM and latent variables (U).
 
-- Counterfactuals imagine what could have happened if actions were different.
+- Two main methods
 
-- Harder than interventional questions but important for intelligent reasoning.
+  - Abduction–Action–Prediction: infer latent U → intervene → predict outcome.
 
-- Example:
-  - "Would a patient have avoided heart failure if they exercised earlier?"
+  - Twin Network: duplicate model for factual & counterfactual worlds → jointly compute effects.
 
-- Important for AI to reflect on past decisions and learn from alternatives.
-
-- Critical in reinforcement learning for hypothesis testing and improving policies.
 
 
 --
-
-#  D. Nature of Data: Observational, Interventional, (Un)structured
-
-- Data types matter for causal inference:
-  - **Observational** (i.i.d. or with unknown shifts) vs. **Interventional** (known changes)
-  - **Hand-engineered** (structured features) vs. **Raw** (images, audio)
-
-- Statistical models work with observational/raw data but can't reveal causality
-
-- Causal learning often needs
-  - Data from multiple environments or known interventions
-  - Assumptions like causal sufficiency
-
-
+<img src="figures/Figure3(2).png" alt="Histogram" width="1000">
 
 ---
 
-#  III. CAUSAL MODELS AND INFERENCE
-
-- This section explores the difference between statistical and causal models.
-
-- It also introduces a formal framework for reasoning about interventions and distribution shifts.
-
---
-
-# A. Methods driven by i.i.d. data
-
-- Most ML successes rely on
-
-  - Large labeled datasets (human-made or simulated)
-
-  - High-capacity models (neural nets etc.)
-
-  - Powerful computing resources.
-
-  - **i.i.d. assumption**
-
---
-
-- Limitations of i.i.d.
-  - Fails under distribution shifts:
-    - Different real-world conditions (different clinics or countries)
-    - Adversarial examples break models with small image changes
-    - Models confuse cause and effect 
-  - i.i.d. systems lack causal understanding
-
-    - Cannot reason about interventions
-    - Struggle in dynamic or changing environments
+# Potential Outcomes & Average Treatment Effect (ATE)
 
 
---
+- Potential Outcomes: Predict what would happen with vs. without a treatment.
 
-# B. The Reichenbach Principle: From Statistics to Causality
+ - \Y_1,i = outcome for unit i receiving the treatment
+ - \Y_0,i = outcome for unit i not receiving the treatment
+
+- Causal Effect (Individual): Difference between outcomes:
+ - \tau = Y_1,i - Y_0,i
 
 
-<div style="border: 2px solid #4CAF50; padding: 10px; border-radius: 5px; background-color: #f9f9f9;">
-  <strong>Reichenbach’s Common Cause Principle:</strong> if two observables X and Y are statistically dependent, then there exists a variable Z that causally influences both and explains all the dependence in the sense of making them independent when conditioned on Z
-</div>
-
-
-- Limitation of Observational Data:
-
-  - Can't distinguish between causal structures (X ⟶ Y vs Y ⟶ X vs Z ⟶ both)
-
-  - All produce the same observed dependence
-
-- More Variables Help:
-  - Conditional independence between variables can reveal causal direction
-
-  - Leads to causal graphs and structural causal models (SCMs)
-
---
-
-#  C. Structural causal models (SCMs)
-
-- **SCM Definition**: Each variable $ X_i := f_i (PA_i, U_i) $
-  - $PA_i$ is the parent variables (causes)
-  - $U_i$ is the independent noise (captures randomness)
-  - It is represented as a Directed Acyclic Graph (DAG)
-
---
+---
 **Key Concepts**
 - Causal Markov Condition: $X_i$ is independent of non-descendants given $PA_i$
 - Causal Factorization:
