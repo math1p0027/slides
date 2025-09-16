@@ -7,7 +7,7 @@ Sofia Zervaki, 2025
 ---
 # Introduction
 
-- Medical imaging covers MRI, CT, X-ray, and Ultrasound → crucial for diagnosis & monitoring.
+- Medical imaging covers MRI, CT, X-ray, and Ultrasound -> crucial for diagnosis & monitoring.
 
 - ML has shown success in lesion detection, segmentation, and scan alignment.
 
@@ -22,10 +22,20 @@ Sofia Zervaki, 2025
 
 - TRLs describe the stages from research -> deployment.
 
-- Many ML systems in medical imaging jump from TRL 4 (PoC) → TRL 7 (Integration).
+- Many ML systems in medical imaging jump from TRL 4 (PoC) -> TRL 7 (Integration).
 
-- This skips TRL 5–6, where algorithms are made robust and production-ready.
+- This skips TRL 5-6, where algorithms are made robust and production-ready.
     
+
+--
+
+
+
+
+<img src="figures/Figure2(2).png" alt="Histogram" width="1000">
+
+
+
 ---
 
 #  Why Causality Matters in Medical Imaging
@@ -42,7 +52,7 @@ Sofia Zervaki, 2025
 
   - Data selection bias – limited datasets in medical domains.
 
-- Causal analysis can mitigate these biases → safer & more adaptable ML.
+- Causal analysis can mitigate these biases -> safer & more adaptable ML.
 
 --
 # Background 
@@ -72,9 +82,9 @@ Sofia Zervaki, 2025
 
 - Two main methods
 
-  - Abduction–Action–Prediction: infer latent U → intervene → predict outcome.
+  - Abduction–Action–Prediction: infer latent U -> intervene -> predict outcome.
 
-  - Twin Network: duplicate model for factual & counterfactual worlds → jointly compute effects.
+  - Twin Network: duplicate model for factual & counterfactual worlds -> jointly compute effects.
 
 
 
@@ -86,13 +96,13 @@ Sofia Zervaki, 2025
 # Potential Outcomes & Average Treatment Effect (ATE)
 
 
-- Potential Outcomes: Predict what would happen with vs. without a treatment.
+- Potential Outcomes: Predict what would happen with and without a treatment.
 
- - \Y_1,i = outcome for unit i receiving the treatment
- - \Y_0,i = outcome for unit i not receiving the treatment
+ - Y_{1,i} = outcome for unit i receiving the treatment
+ - Y_{0,i} = outcome for unit i not receiving the treatment
 
 - Causal Effect (Individual): Difference between outcomes:
- - \tau = Y_1,i - Y_0,i
+ - tau = Y_{1,i} - Y_{0,i}
 
 - Average Treatment Effect (ATE): Average effect across a population: \tau_{ATE} = E[Y_1 - Y_0]
 - Propensity Score: Probability of receiving treatment given covariates 
