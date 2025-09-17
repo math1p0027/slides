@@ -36,7 +36,7 @@ Sofia Zervaki, 2025
 
 
 
----
+--
 
 #  Why Causality Matters in Medical Imaging
 
@@ -54,7 +54,7 @@ Sofia Zervaki, 2025
 
 - Causal analysis can mitigate these biases -> safer & more adaptable ML.
 
---
+---
 # Background 
 
 *Structural Causal Models (SCM):*
@@ -74,8 +74,8 @@ Sofia Zervaki, 2025
 
   - Together (U,V,F) induce a distribution P(V)
 
+  --
 
--- 
 
 - *Do-Operator (do(x))*
 
