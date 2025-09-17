@@ -68,10 +68,12 @@ Sofia Zervaki, 2025
 
   - Each observed variable:
    - $v_i =f_i (PA_i, u_i)  $
-  where PA_i are the parent nodes of v_i
+  where $PA_i$ are the parent nodes of $v_i$
 
   - Together (U,V,F) induce a distribution P(V)
---
+
+
+-- 
 
 - *Do-Operator (do(x))*
 
