@@ -74,7 +74,8 @@ Sofia Zervaki, 2025
 
   - Together (U,V,F) induce a distribution P(V)
 
-  --
+
+--
 
 
 - *Do-Operator (do(x))*
@@ -85,9 +86,10 @@ Sofia Zervaki, 2025
    - P(Y|do(X=x))
 
 
---
 
-  
+-- 
+
+
 # Counterfactual Inference & Twin Networks
 
 
