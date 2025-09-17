@@ -57,17 +57,28 @@ Sofia Zervaki, 2025
 --
 # Background 
 
-- *Structural Causal Models (SCM)*
+- *Structural Causal Models (SCM):*
 
-  - Represent cause–effect relations with variables and functions.
+  - Define relationships between
+   - Latent variables U
+   - Observed variables V
+   - Functions F
 
   - Use Directed Acyclic Graphs (DAGs) to show dependencies.
 
+  - Each observed variable:
+   - $v_i =f_i (PA_i, u_i)  $
+  where PA_i are the parent nodes of v_i
+
+  - Together (U,V,F) induce a distribution P(V)
+--
+
 - *Do-Operator (do(x))*
 
-  - Simulates interventions: "What happens if we force X = x?"
+  - Simulates interventions: What happens if we force X = x? do(X=x)
 
   - Lets us estimate causal effects, not just correlations.
+   - P(Y|do(X=x))
 
 
 --
