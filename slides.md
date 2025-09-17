@@ -78,6 +78,19 @@ Sofia Zervaki, 2025
 --
 
 
+
+- *Do-Operator (do(x))*
+
+  - Simulates interventions: What happens if we force X = x? do(X=x)
+
+  - Lets us estimate causal effects, not just correlations.
+   - P(Y|do(X=x))
+
+
+-- 
+
+
+
 # Counterfactual Inference & Twin Networks
 
 
