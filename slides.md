@@ -57,17 +57,19 @@ Sofia Zervaki, 2025
 --
 # Background 
 
-- *Structural Causal Models (SCM):*
+*Structural Causal Models (SCM):*
 
-  - Define relationships between
-   - Latent variables U
-   - Observed variables V
-   - Functions F
+- Define relationships between
+  - Latent variables U
+  - Observed variables V
+  - Functions F
 
-  - Use Directed Acyclic Graphs (DAGs) to show dependencies.
+- Use Directed Acyclic Graphs (DAGs) to show dependencies.
 
   - Each observed variable:
-   - $v_i =f_i (PA_i, u_i)  $
+
+     $v_i =f_i (PA_i, u_i)  $
+
   where $PA_i$ are the parent nodes of $v_i$
 
   - Together (U,V,F) induce a distribution P(V)
