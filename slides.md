@@ -230,6 +230,7 @@ $e = P(T|X)$ is the probability of receiving the treatment given covariates X
 # Fairness, Safety & Explainability
 
 - Medical imaging AI/ML directly impacts patient health
+
 - Any errors can be deadly, so the algorithms must be 
 
  - Fair: avoid societal or demographic biases
@@ -254,7 +255,7 @@ $e = P(T|X)$ is the probability of receiving the treatment given covariates X
 
 ---
 
-# Generative methods - Generative Methods & Causal Inference
+# Generative methods & Causal Inference
 
 - Learn relationships between variables to generate realistic synthetic images
 
@@ -274,7 +275,7 @@ $e = P(T|X)$ is the probability of receiving the treatment given covariates X
 
 # Domain Generalization
 
-- Goal: Make models robust to new hospitals, scanners, or populations.
+- We want to make models robust to new hospitals, scanners, or populations.
 
 - Challenge: Models trained on one dataset may fail under distribution shifts.
 
