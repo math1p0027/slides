@@ -192,55 +192,103 @@ $e = P(T|X)$ is the probability of receiving the treatment given covariates X
 
 # Methods for causal discovery
 
-- Constraint-based: Test conditional independence to determine causal links (e.g., PC, FCI).
+- 1. Constraint-based: Test conditional independence to determine causal links (e.g., PC, FCI).
 
-- Score-based: Search for best DAG using a score (e.g., GES, BIC).
+- 2. Score-based: Search for best DAG using a score (e.g., GES, BIC).
 
-- Optimization-based: Learn DAGs via continuous optimization
+- 3. Optimization-based: Learn DAGs via continuous optimization
 
 
-
---
-
-# Challenges
-
-- Images alone often don’t have enough information to fully identify causal links.
-
-- Lack of meta-data (context about patients, experiments) makes it harder.
-
-- Task is inherently difficult, which is why the field is still emerging.
 
  ---
 
 
 # Causal Inference in medical imaging
 
+- Causal inference uses known causal relationships to improve ML models
 
+- Medical imaging datasets have biases (e.g Acquisition/annotation, Population, Selection bias)
+
+- Without causal methods, models can fail in new populations or make misdiagnoses.
 
 --
 
-# Medical Analysis
+# Causal inference contributes to
+
+- Fairness: unbiased predictions across groups
+
+- Safety: avoiding dangerous mistakes from spurious correlations
+
+- Explainability: understanding model decisions
+
+- Generative modeling: synthetic medical images
+
+- Domain generalization / OOD detection: robustness to new populations
 
 
---
+---
 # Fairness, Safety & Explainability
 
---
+- Medical imaging AI/ML directly impacts patient health
+- Any errors can be deadly, so the algorithms must be 
 
-# Generative methods
+ - Fair: avoid societal or demographic biases
+
+ - Safe: robust to real-world variations
+
+ - Explainable: understandable to clinicians and patients
+
+- Causal inference is a key tool to analyze black-box models and detect hidden biases.
 
 --
+# Improving Datasets & Deployment
+
+- Dataset design & metadata
+ - Use causal analysis to select relevant data 
+ - Standardize metadata to help causal methods 
+
+- Cross-hospital fairness: ensure model performance across populations
+ - Example: evaluating bias in different hospitals
+
+- Propensity scores can quantify diversity and mitigate population bias
+
+---
+
+# Generative methods - Generative Methods & Causal Inference
+
+- Learn relationships between variables to generate realistic synthetic images
+
+- Helps with TRLs 6.4–6.8 (model development & clinical validation)
+
+- Common approaches
+
+ - VAE – Variational Autoencoders
+
+ - GAN – Generative Adversarial Networks
+
+ - Normalizing Flows
+
+
+---
+
 
 # Domain Generalization
 
+- Goal: Make models robust to new hospitals, scanners, or populations.
 
---
+- Challenge: Models trained on one dataset may fail under distribution shifts.
+
+- Causal reasoning helps by modeling the generative process of medical images (disease, patient history, scanner, etc.).
+
+---
+
 
 # Out of Distribution Robustness & Detection
 
 
 
 
+---
 
 
 
