@@ -77,10 +77,6 @@ Sofia Zervaki, 2025
 
 --
 
-This is a test
-
-
---
 
 
 
@@ -123,6 +119,7 @@ This is a test
 
 # Potential Outcomes-Basic Idea
 - Each unit (patient, image, etc.) has two possible outcomes depending on whether a treatment is applied.
+
   - $Y(a)$ = outcome if intervention/action $a$ is applied
   - $C$ = set of possible interventions
 
@@ -148,13 +145,14 @@ This is the difference between the treated and untreated outcomes for that unit.
 
 - The average causal effect across all units in the population is
 
-$\tau_{ATE} = \frac{1}{N} \sum_i^N ( Y_{1,i} - Y_{0,i}) = E[Y_1 - Y_0]$
+$\tau_{ATE} = \frac{1}{N} \sum_i^N  Y_{1,i} - \frac{1}{N} \sum_i^N  Y_{0,i} = E[Y_1 - Y_0] = E[\tau_i]$
 
 
 - how the treatment changes outcomes on average
-- 
 
--- 
+
+--
+
 
 # Propensity Score
 
@@ -171,28 +169,80 @@ $e = P(T|X)$ is the probability of receiving the treatment given covariates X
 
 ---
 # Causal Discovery in Medical Imaging
-- Common Assumptions:
 
-  - Acyclicity: DAG structure (no cycles).
+- Causal discovery is the task of finding cause-effect relationships from data
 
-  - Markovian: Node independent of non-descendants given parents.
+- In medical imaging we are trying to understand which variables actually influence others.
 
-  - Faithfulness: All conditional independences represented in DAG.
 
-  - Sufficiency: No hidden common causes.
+--
+
+# Assumptions for causal discovery
+
+- Acyclicity: DAG structure (no cycles)
+
+- Markovian: Node independent of non-descendants given parents
+
+- Faithfulness: All conditional independences represented in DAG
+
+- Sufficiency: No hidden common causes between pairs of nodes
 
 --
 
 
-- Approaches:
+# Methods for causal discovery
 
-  - Constraint-based: Test conditional independence (e.g., PC, FCI).
+- Constraint-based: Test conditional independence to determine causal links (e.g., PC, FCI).
 
-  - Score-based: Search for best DAG using a score (e.g., GES, BIC).
+- Score-based: Search for best DAG using a score (e.g., GES, BIC).
 
-  - Optimization-based: Learn DAGs via continuous optimization
+- Optimization-based: Learn DAGs via continuous optimization
 
+
+
+--
+
+# Challenges
+
+- Images alone often don’t have enough information to fully identify causal links.
+
+- Lack of meta-data (context about patients, experiments) makes it harder.
+
+- Task is inherently difficult, which is why the field is still emerging.
 
  ---
+
+
+# Causal Inference in medical imaging
+
+
+
+--
+
+# Medical Analysis
+
+
+--
+# Fairness, Safety & Explainability
+
+--
+
+# Generative methods
+
+--
+
+# Domain Generalization
+
+
+--
+
+# Out of Distribution Robustness & Detection
+
+
+
+
+
+
+
  # Thank you!
 
