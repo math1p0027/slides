@@ -84,9 +84,9 @@ This is a test
 
 
 
-- *Do-Operator (do(x))*
+*Do-Operator (do(x))*
 
-  - Simulates interventions: What happens if we force X = x? do(X=x)
+  - Simulates interventions: What happens if we force X = x,  do(X=x)?
 
   - Lets us estimate causal effects, not just correlations.
    - P(Y|do(X=x))
@@ -101,9 +101,10 @@ This is a test
 
 - Counterfactuals “What would Y have been if X had been different?”
 
-- Computed using SCM and latent variables (U).
+ - Computed using SCM and latent variables (U).
+ 
 
-- Two main methods
+- Two main methods for answering Counterfactuals
 
   - Abduction–Action–Prediction: infer latent U -> intervene -> predict outcome.
 
@@ -118,18 +119,55 @@ This is a test
 
 # Potential Outcomes & Average Treatment Effect (ATE)
 
+--
 
-- Potential Outcomes: Predict what would happen with and without a treatment.
+# Potential Outcomes-Basic Idea
+- Each unit (patient, image, etc.) has two possible outcomes depending on whether a treatment is applied.
+  - $Y(a)$ = outcome if intervention/action $a$ is applied
+  - $C$ = set of possible interventions
 
- - Y_{1,i} = outcome for unit i receiving the treatment
- - Y_{0,i} = outcome for unit i not receiving the treatment
+- We want to estimate causal effect by comparing outcomes under different action
 
-- Causal Effect (Individual): Difference between outcomes:
- - tau = Y_{1,i} - Y_{0,i}
+--
 
-- Average Treatment Effect (ATE): Average effect across a population: \tau_{ATE} = E[Y_1 - Y_0]
-- Propensity Score: Probability of receiving treatment given covariates 
- - helps match treated & untreated units for fair comparison.
+# Potential Outcomes
+
+- For each unit i
+ - $Y_{1,i}$ outcome if treated
+ - $Y_{0,i}$ outcome if not treated
+
+- The causal effect for a single unit
+ $\tau_i = Y_{1,i} - Y_{0,i}$
+
+
+This is the difference between the treated and untreated outcomes for that unit.
+
+--
+
+# Average Treatment Effect (ATE)
+
+- The average causal effect across all units in the population is
+
+$\tau_{ATE} = \frac{1}{N} \sum_i^N ( Y_{1,i} - Y_{0,i}) = E[Y_1 - Y_0]$
+
+
+- how the treatment changes outcomes on average
+- 
+
+-- 
+
+# Propensity Score
+
+$e = P(T|X)$ is the probability of receiving the treatment given covariates X
+
+
+- Used to match treated & untreated units with similar characteristics
+
+- It helps simulate randomized experiments using observational data
+
+- It reduces bias from confounding variables
+
+
 
 ---
 # Causal Discovery in Medical Imaging
