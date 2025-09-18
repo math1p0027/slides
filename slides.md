@@ -285,11 +285,14 @@ $e = P(T|X)$ is the probability of receiving the treatment given covariates X
 
 # Out of Distribution Robustness & Detection
 
+- Identify samples that differ from training data (anomalies).
 
+- Standard OOD: Check if new images follow the same distribution.
+
+- Causal reasoning: Understand why samples are different.
 
 
 ---
-
 
 
  # Thank you!
